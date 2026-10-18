@@ -1,3 +1,14 @@
-selenium==3.141.0
-webdriver_manager==3.4.2
-argparse==1.4.0
+requests==2.34.2
+
+# Optional: only needed for --dom-check, which drives a locally installed
+# Chrome to find client-side (JavaScript) redirects.
+#   pip install selenium
+# Selenium 4 resolves a local ChromeDriver itself. webdriver_manager was
+# removed because ChromeDriverManager().install() downloads and executes a
+# driver binary at runtime, from a URL controlled by a third party.
+selenium==4.51.0
+
+# Removed from this file:
+#   argparse==1.4.0 - a Python 2 backport that shadows the standard library
+#                      argparse module; the script does not need it
+#   webdriver_manager==3.4.2 - runtime driver download (see above)
